@@ -1,0 +1,66 @@
+@import "variaveis"; /*pode ser '_variaveis.scss' ou 'variaveis.scss'*/
+@import "mixin";
+
+@for $i from 1 through 3 {
+  .item-#{$i} {
+    background: $cor-principal;
+    margin-bottom: 2px;
+  }
+}
+
+h1 {
+  @include titulo(white, black); /*usando mixin*/
+}
+
+h2 {
+  color: white;
+  @include titulo(red, yellow); /*usando mixin*/
+}
+
+/*herança*/
+.classe1{
+  color:red;
+}
+
+.classe2{
+  background: black;
+}
+.vermelho{
+  @extend .classe1; /*pega as configurações da classe1*/
+  @extend .classe2;
+}
+
+/*herança encadeada*/
+/*Placeholder-> %*/
+%pai{ /*-> não é criado no estilo.css*/
+  color:green;
+}
+
+%filho{
+  @extend %pai; /*herda color green*/
+  background: yellow;
+}
+.erro{
+  @extend %filho; /*herda color green e background yellow*/
+
+}
+
+/*diretivas de controle*/
+$cor: red;
+@if($cor == green){
+.ifs{
+  color: $cor;
+}
+}@else if($cor == red){
+  .ifs{
+    color: $cor;
+  }
+}@else{
+  .ifs{
+    color: yellow;
+  }
+}
+
+body{
+  @include tema(natal);
+}

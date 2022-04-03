@@ -1,0 +1,141 @@
+@charset "UTF-8";
+/*Aninhamento*/
+#conteudo {
+  background: green; }
+  #conteudo h1, #conteudo h2 {
+    color: purple; }
+  #conteudo a {
+    color: red; }
+    #conteudo a:hover {
+      /*Referenciando o seletor pai*/
+      color: blue; }
+
+/*variáveis*/
+h3 {
+  color: red; }
+
+#rodape {
+  /*será usada apenas dentro da classe, para ir para todas, da para usar !global*/
+  color: blue;
+  background-color: purple; }
+
+/*Interpolação -> x */
+/*nome da classe como variável*/
+/*propriedade como variável*/
+.vermelho {
+  color: red; }
+
+/*for*/
+/*pode usar to tbm, se usar "to", ele vai executar 1 e 2 apenas, no through ele vai de 1 a 3.*/
+.item-1 {
+  background: green;
+  margin-bottom: 2px; }
+
+.item-2 {
+  background: green;
+  margin-bottom: 2px; }
+
+.item-3 {
+  background: green;
+  margin-bottom: 2px; }
+
+/*while*/
+.item-1 {
+  background: orange;
+  margin-bottom: 2px; }
+
+.item-2 {
+  background: orange;
+  margin-bottom: 2px; }
+
+.item-3 {
+  background: orange;
+  margin-bottom: 2px; }
+
+.item-4 {
+  background: orange;
+  margin-bottom: 2px; }
+
+/*each: percorre itens de uma lista*/
+.item-1 {
+  background: green;
+  margin-bottom: 2px; }
+
+.item-2 {
+  background: yellow;
+  margin-bottom: 2px; }
+
+.item-3 {
+  background: red;
+  margin-bottom: 2px; }
+
+/*funções*/
+/*
+50%
+*/
+/*Exercícios com funções*/
+.col-1 {
+  width: 8.3333333333%;
+  background: green; }
+
+.col-2 {
+  width: 16.6666666667%;
+  background: green; }
+
+.col-3 {
+  width: 25%;
+  background: green; }
+
+.col-4 {
+  width: 33.3333333333%;
+  background: green; }
+
+.col-5 {
+  width: 41.6666666667%;
+  background: green; }
+
+.col-6 {
+  width: 50%;
+  background: green; }
+
+.col-7 {
+  width: 58.3333333333%;
+  background: green; }
+
+.col-8 {
+  width: 66.6666666667%;
+  background: green; }
+
+.col-9 {
+  width: 75%;
+  background: green; }
+
+.col-10 {
+  width: 83.3333333333%;
+  background: green; }
+
+.col-11 {
+  width: 91.6666666667%;
+  background: green; }
+
+.col-12 {
+  width: 100%;
+  background: green; }
+
+/*outras funções (nativas do sass)*/
+.alerta {
+  background: #b39a00;
+  /*mescla verde com laranja em 20%*/
+  color: yellow; }
+
+.alerta1 {
+  background: #cc8400;
+  /*deixa 30% mais escura o laranja*/
+  color: yellow; }
+
+.alerta2 {
+  background: #ffedcc;
+  /*deixa 40% mais claroo laranja*/
+  color: yellow; }
+
+/*# sourceMappingURL=estilo.css.map */

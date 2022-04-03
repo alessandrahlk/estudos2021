@@ -1,0 +1,22 @@
+
+/*serve para remover estrutura repetitivas, criando um padrão (agrupamento de propriedades)*/
+
+@mixin titulo($cor:white,$cor-bg:black){ /*caso não passar $cor-bg, por padrão coloca black, mesma coisa para o $cor*/
+    color:$cor;
+    background-color:$cor-bg;
+    padding:10px 5px;
+}
+
+/*Diretivas de controle e Mixins*/
+@mixin tema($tema: padrao){
+    @if ($tema == natal){
+      background:green;
+      color:white;
+    }@else if($tema == blackfriday){
+      background: black;
+      color:white;
+    }@else{
+      background: red;
+      color:black
+    }
+  }

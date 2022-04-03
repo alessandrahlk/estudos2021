@@ -1,0 +1,105 @@
+/*Aninhamento*/
+#conteudo{
+  background:green;
+  
+  h1, h2{
+    color:purple;
+  }
+  
+  a{
+    color:red;
+    &:hover{ /*Referenciando o seletor pai*/
+      color:blue;
+    }
+  }
+}
+/*variáveis*/
+$cor-primaria: red;
+$tamanho-titulo:21px;
+
+h3{
+  color: $cor-primaria;
+}
+$cor-padrao: purple;
+#rodape{
+  $cor-primaria:blue; /*será usada apenas dentro da classe, para ir para todas, da para usar !global*/
+  color: $cor-primaria;
+  background-color: $cor-padrao;
+}
+
+/*Interpolação -> #{x} */
+$classe: red;
+$nomeclasse:vermelho; /*nome da classe como variável*/
+$color: color; /*propriedade como variável*/
+
+.#{$nomeclasse}{
+  #{$color}: $classe;
+}
+
+/*for*/
+/*pode usar to tbm, se usar "to", ele vai executar 1 e 2 apenas, no through ele vai de 1 a 3.*/
+@for $i from 1 through 3{ 
+.item-#{$i}{
+  background: green;
+  margin-bottom:2px;
+}
+}
+
+/*while*/
+$contador:1;
+@while $contador <5{
+  .item-#{$contador}{
+    background: orange;
+    margin-bottom:2px;
+  }
+  $contador: $contador + 1;
+}
+
+/*each: percorre itens de uma lista*/
+$lista: green,yellow,red;
+$contador:1;
+@each $cor in $lista{
+  .item-#{$contador}{
+    background: $cor;
+    margin-bottom:2px;
+    $contador: $contador + 1;
+  }
+}
+
+/*funções*/
+$total : 12;
+@function largura-coluna($coluna){ /*@function largura-coluna($coluna:2) -> colocando :2, quer dizer que se nao passar o paramêtro, vai ser 2*/
+/*transforma em porcentagem*/
+@return percentage($coluna/$total); 
+}
+
+$resultado: largura-coluna(6);
+/*
+#{$resultado}
+*/
+
+/*Exercícios com funções*/
+@for $i from 1 through $total{ 
+  .col-#{$i}{
+    width: largura-coluna($i);
+    background: green;
+  }
+  }
+
+  /*outras funções (nativas do sass)*/
+  .alerta{
+    background: mix(green,orange,30%); /*mescla verde com laranja em 20%*/
+    color:yellow;
+  }
+
+  .alerta1{
+    background: darken(orange,10%); /*deixa 30% mais escura o laranja*/
+    color:yellow;
+  }
+
+  .alerta2{
+    background: lighten(orange,40%); /*deixa 40% mais claroo laranja*/
+    color:yellow;
+  }
+
+

@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/*Arquivos parciais-> usados como importações, devem começar com "_", nem aparece no koala para compilar*/
+/*pode ser '_variaveis.scss' ou 'variaveis.scss'*/
+/*serve para remover estrutura repetitivas, criando um padrão (agrupamento de propriedades)*/
+/*Diretivas de controle e Mixins*/
+.item-1 {
+  background: red;
+  margin-bottom: 2px; }
+
+.item-2 {
+  background: red;
+  margin-bottom: 2px; }
+
+.item-3 {
+  background: red;
+  margin-bottom: 2px; }
+
+h1 {
+  /*caso não passar $cor-bg, por padrão coloca black, mesma coisa para o $cor*/
+  color: white;
+  background-color: black;
+  padding: 10px 5px;
+  /*usando mixin*/ }
+
+h2 {
+  color: white;
+  /*caso não passar $cor-bg, por padrão coloca black, mesma coisa para o $cor*/
+  color: red;
+  background-color: yellow;
+  padding: 10px 5px;
+  /*usando mixin*/ }
+
+/*herança*/
+.classe1, .vermelho {
+  color: red; }
+
+.classe2, .vermelho {
+  background: black; }
+
+.vermelho {
+  /*pega as configurações da classe1*/ }
+
+/*herança encadeada*/
+/*Placeholder-> %*/
+.erro {
+  /*-> não é criado no estilo.css*/
+  color: green; }
+
+.erro {
+  /*herda color green*/
+  background: yellow; }
+
+.erro {
+  /*herda color green e background yellow*/ }
+
+/*diretivas de controle*/
+.ifs {
+  color: red; }
+
+body {
+  background: green;
+  color: white; }
+
+/*# sourceMappingURL=estilo.css.map */

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        /* Exemplo básico de array
+         ******************************/
+        var lista_frutas = Array();
+        lista_frutas[0] = 'Banana';
+        lista_frutas[1] = 'Maçã';
+
+        lista_frutas.push('Laranja'); /*insere ao final do array*/
+        lista_frutas.unshift('Uva'); /*insere no começo do array*/
+
+        lista_frutas.pop(); /*remove elemento final do array*/
+        lista_frutas.shift(); /*remove do começo*/
+
+        console.log(lista_frutas);
+
+        var pessoas = Array(); /*exemplo em array multidimensional*/
+        pessoas['alunos'] = Array();
+        pessoas['professores'] = Array();
+
+        pessoas['alunos'].push('Alessandra');
+        console.log(pessoas);
+
+        /*Pesquisa dentro do array
+        ******************************/
+
+        if(lista_frutas.indexOf('Banana')==-1){ /*-1 quer dizer q não existe no array*/
+            console.log('Elemento não existe');
+        }else{
+            console.log('Elemento existe e está no índice:' + lista_frutas.indexOf('Banana'));
+        }
+
+        /*Ordenação
+        ******************************/
+        /*Alfabética*/
+        lista_frutas.push('Laranja'); 
+        lista_frutas.push('Uva');
+        lista_frutas.push('Ameixa');  
+
+        console.log(lista_frutas.sort()); /*ordena em ordem alfabética, numérico não funciona*/
+
+        /*Numérico*/
+        var lista_numeros = Array();
+        lista_numeros[0] = 14;
+        lista_numeros[1] = 2;
+        lista_numeros[2] = 6;
+
+        function ordenaNumeros(a,b){
+            return a-b;
+        } /*precisa passar para o sort, esta function que vai ordenar comparando os números subtraindo eles, se for negativo, vai para cima*/
+
+        console.log(lista_numeros.sort(ordenaNumeros)); /*passa apenas a referência da função para ser utiliada dentro do sort*/
+    </script>
+</body>
+</html>
